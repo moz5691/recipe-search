@@ -18,7 +18,7 @@ module.exports = {
 };
 ```
 
-**"seeds.js"** is to seed initial DB data into MongoDB. To run it. Save a lot of time!!!
+**"seeds.js"** is to seed initial DB data into MongoDB. Use the followign to run it.
 
 **node seeds.js**
 
@@ -30,7 +30,7 @@ In **package.json**
   "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
 ```
 
-In **index.js** , this tells Express server the location of client's build packages(HTML,CSS,JS). "app.get" is 2nd layer of protect in case for any fails from "app.use(...)".
+In **index.js** , this tells Express server the location of client's build packages(HTML,CSS,JS). "app.get" is the next layer of protection in case for any failures from "app.use(...)".
 
 ```javascript
 if (process.env.NODE_ENV === 'production') {
