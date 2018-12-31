@@ -24,3 +24,5 @@ module.exports = {
 
 **Screenshot**
 ![alt text](misc/screenshot.png 'screenshot')
+
+By C. Ahn
