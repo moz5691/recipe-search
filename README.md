@@ -3,6 +3,7 @@
 ### React, Semantic UI, Express, MongoDB
 
 **npm install**
+
 **npm run dev** --> this is to run both React Client and Express Server (refer package.json).
 
 ### Note:
@@ -18,6 +19,7 @@ module.exports = {
 ```
 
 **"seeds.js"** is to seed initial DB data into MongoDB. To run it. Save a lot of time!!!
+
 **node seeds.js**
 
 **Screenshot**
