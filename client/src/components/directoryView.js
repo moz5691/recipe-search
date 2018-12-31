@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import { getRecipes } from '../services/fakeRecipes';
+// import { getRecipes } from '../services/fakeRecipes'; //
 import SearchForm from './searchForm';
 import RecipeCard from './recipeCard';
 import DetailView from './detailView';
@@ -17,7 +17,6 @@ class DirectoryView extends Component {
 
   async componentDidMount() {
     const { data } = await axios.get('/api/recipe');
-    console.log(data);
     this.setState({ recipes: [...data] });
   }
   handleInputChange = evt => {
@@ -45,6 +44,7 @@ class DirectoryView extends Component {
   };
 
   render() {
+    const { input, filtered, recipe } = this.state;
     return (
       <React.Fragment>
         <Grid columns={2}>
@@ -52,15 +52,12 @@ class DirectoryView extends Component {
             <SearchForm
               onInput={this.handleInputChange}
               onForm={this.handleFormSubmit}
-              input={this.state.input}
+              input={input}
             />
-            <RecipeCard
-              recipes={this.state.filtered}
-              onHandleDetail={this.handleDetail}
-            />
+            <RecipeCard recipes={filtered} onHandleDetail={this.handleDetail} />
           </Grid.Column>
           <Grid.Column width="9">
-            {this.state.recipe && <DetailView recipe={this.state.recipe} />}
+            {recipe && <DetailView recipe={recipe} />}
           </Grid.Column>
         </Grid>
       </React.Fragment>

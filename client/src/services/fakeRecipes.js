@@ -1,3 +1,5 @@
+/* Seeds without DB */
+
 const recipes = [
   {
     id: 1,
