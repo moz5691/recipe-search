@@ -1,11 +1,12 @@
-##Simple food recipe search app.
+## Simple food recipe search app.
 
 ### React, Semantic UI, Express, MongoDB
 
 **npm install**
 **npm run dev** --> this is to run both React Client and Express Server (refer package.json).
 
-###Note:
+### Note:
+
 **config/dev.js** is not in the repo. "dev.js" is to store MongDB URL.
 
 **"dev.js"** format should look like following:
