@@ -44,7 +44,11 @@ if (process.env.NODE_ENV === 'production') {
 
 ### For Development : Proxy between Server and Client
 
-In development, React server uses Port 3000 and Express uses Port 5000. We need a proxy setting in Client side. When client sends out API to server, need the following to allow the client to use proxy to reach out the server at PORT 5000. "proxy setting" in "package.json" isn't workign any loner with CRA2.0 (CreateReactAPP). The following middleware setup tells CRA to use the given proxy configuration. No other action needed but drop the following code in the given path and filename as below:
+In development, React server uses Port 3000 and Express uses Port 5000. We need a proxy setting in Client side. Basically, we need to tell the client that the client must send out API to Port 5000 (otherwise, client just uses the same port number for the server bound traffic) We need the following to allow the client to use proxy to reach out the server at PORT 5000. "proxy setting" in "package.json" won't work any loner with new CRA2.0 (CreateReactAPP). The following middleware setup tells CRA to use the given proxy configuration. No other action needed but drop the following code in the given path and filename as below. CRA20 will just pick it up to use it as Client side proxy setting.
+
+React(client) : 3000 ---> Proxy (use 5000) ---> Express(Server) : 5000
+
+Note that you don't need Proxy for the opposite diretion as Express sees React (Client) as public side.
 
 In **client/src/setupProxy.js**
 
